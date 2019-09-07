@@ -1,0 +1,8 @@
+{
+  "CDW.db.source::TEST01": {
+    "target": {
+      "object": "TEST01",
+      "schema": "SAPTEST"
+    }
+  }
+}

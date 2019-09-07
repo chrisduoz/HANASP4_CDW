@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CDW.db.ODS::CVR_TEST01" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="CVR_TEST01"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="CDW.db.source::TEST01">
+    <resourceUri>CDW.db.source::TEST01</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="AA"/>
+      <viewAttribute id="BB"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="CDW.db.source::TEST01">
+      <mapping xsi:type="Calculation:AttributeMapping" target="AA" source="AA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BB" source="BB"/>
+    </input>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="AA" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AA"/>
+      <keyMapping columnObjectName="Projection_1" columnName="AA"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="BB" order="2" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="BB"/>
+      <measureMapping columnObjectName="Projection_1" columnName="BB"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-284" y="138"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>
