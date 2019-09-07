@@ -14,12 +14,13 @@
       <viewAttribute id="AA"/>
       <viewAttribute id="BB"/>
     </viewAttributes>
-    <calculatedViewAttributes/>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>&quot;BB&quot; * 2</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
     <restrictedViewAttributes/>
-    <input node="CDW.db.source::TEST01">
-      <mapping xsi:type="Calculation:AttributeMapping" target="AA" source="AA"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="BB" source="BB"/>
-    </input>
+    <input node="CDW.db.source::TEST01"/>
   </calculationView>
 </calculationViews>
 <logicalModel id="Projection_1">
@@ -35,6 +36,11 @@
       <descriptions defaultDescription="BB"/>
       <measureMapping columnObjectName="Projection_1" columnName="BB"/>
     </measure>
+  
+    <measure id="CC" order="3" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="CC"/>
+      <measureMapping columnObjectName="Projection_1" columnName="CC"/>
+    </measure>
   </baseMeasures>
   <calculatedMeasures/>
   <restrictedMeasures/>
@@ -43,11 +49,13 @@
 <layout>
   <shapes>
     <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
-      <upperLeftCorner x="40" y="85"/>
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
     </shape>
   
     <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="-284" y="138"/>
+      <upperLeftCorner x="92" y="217"/>
       <rectangleSize height="30" width="160"/>
     </shape>
   </shapes>
